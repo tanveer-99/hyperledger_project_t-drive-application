@@ -1,0 +1,114 @@
+GET http://localhost:3000/
+
+
+
+###
+
+GET http://localhost:3000/book 
+
+
+
+###
+
+POST http://localhost:3000/register 
+content-type: application/json
+
+{
+    "email": "tanvir2@gmail.com",
+    "password": "password12345",
+    "name": "tanvir"
+}
+
+
+###
+
+POST http://localhost:3000/login 
+content-type: application/json
+
+{
+    "email": "tanvir1@gmail.com",
+    "password": "password12345"
+}
+
+
+###
+
+GET http://localhost:3000/logout 
+
+
+
+###
+
+POST http://localhost:3000/file
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="uploadedFile"; filename="api_test.rest"
+
+< ./api_test.rest
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+
+###
+
+GET http://localhost:3000/file 
+
+
+
+###
+
+GET http://localhost:3000/file/file_tanvir1@gmail.com_api_test.rest
+
+
+
+###
+
+PUT http://localhost:3000/file/file_tanvir1@gmail.com_api_test.rest
+content-type: application/json
+
+{
+    "newFileName" : "api.rest"
+}
+
+
+
+
+###
+
+DELETE http://localhost:3000/file/file_tanvir1@gmail.com_api_test.rest
+
+
+
+###
+
+POST http://localhost:3000/fileShare 
+content-type: application/json
+
+{
+    "fileKey": "file_tanvir1@gmail.com_api_test.rest",
+    "sharedWithEmail": "tanvir2@gmail.com",
+    "name": "tanvir (latest)"
+}
+
+
+
+
+###
+
+GET http://localhost:3000/fileShare/byFile/file_tanvir1@gmail.com_api_test.rest
+
+
+
+
+###
+
+GET http://localhost:3000/fileShare/withMe
+
+
+
+###
+
+DELETE http://localhost:3000/fileShare/fileShare_file_tanvir1@gmail.com_api_test.rest_tanvir2@gmail.com
+

@@ -1,0 +1,74 @@
+GET http://localhost:3000/
+
+
+
+###
+
+GET http://localhost:3000/book 
+
+
+
+###
+
+POST http://localhost:3000/register 
+content-type: application/json
+
+{
+    "email": "tanvir111111@gmail.com",
+    "password": "password99",
+    "name": "tanvir"
+}
+
+
+###
+
+POST http://localhost:3000/login 
+content-type: application/json
+
+{
+    "email": "tanvir3512@gmail.com",
+    "password": "password12345"
+}
+
+
+###
+
+GET http://localhost:3000/logout 
+
+
+
+###
+
+POST http://localhost:3000/file
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="uploadedFile"; filename="api_test.rest"
+
+< ./api_test.rest
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+
+###
+
+GET http://localhost:3000/file 
+
+
+
+###
+
+GET http://localhost:3000/file/file_tanvir3512@gmail.com_api_test.rest
+
+
+
+###
+
+PUT http://localhost:3000/file/file_tanvir3512@gmail.com_api_test.rest
+content-type: application/json
+
+{
+    "newFileName" : "api.rest"
+}
+
